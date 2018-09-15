@@ -49,18 +49,45 @@ function __autoload($class_name)
      
 	    $token = $_POST['token'];
 	    $email_user = $_POST['email_user'];
-	    $password_user = $_POST['password_user'];
+	    $password_user = trim($_POST['password_user']);
 
 	    if($flag)
     	{
     		$flag = (trim($email_user)=='') ? false:$flag;
     		$poruka = ($flag) ? $poruka : "Enter your email addres "; 
-    	}
-        if($flag)
-    	{
-    		$flag = (trim($password_user=='')) ? false:$flag;
-    		$poruka = ($flag) ? $poruka : "Enter your password"; 
-    	}
+       }
+     //    if($flag)
+    	// {
+    	// 	$flag = ($password_user=='') ? false:$flag;
+    	// 	$poruka = ($flag) ? $poruka : "Enter your password"; 
+    	// }
+
+    	 if($flag)
+    	 {
+         if(!isset($token) || empty($token) )
+        {
+            $flag = false;
+            $poruka= "Error ";
+        }
+        else
+        {
+        	$id = login_user::getidUser($email_user, $password_user);
+        	if(empty($id))
+            {
+               $flag = false;
+               $poruka=  "Wrong username or password";
+            }
+            else
+            {
+            	if($flag)
+                {
+                $flag = true;
+                
+                $poruka = login_user::logIN($id);
+            }
+        }
+    }
+}
 
 	    $ret->flag = $flag;
         $ret->poruka = $poruka;
