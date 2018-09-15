@@ -40,7 +40,7 @@ require_once 'include/function.php';
           <div class="row">
         
           	<div class="col-sm-12">
-          		<?php loadContent('pages','login') ?>
+          		<?php loadContent('pages','search') ?>
           </div>
       </div>
 <div>
