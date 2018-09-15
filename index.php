@@ -1,3 +1,6 @@
+<?php 
+require_once 'include/function.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +41,7 @@
           <div class="row">
         
           	<div class="col-sm-12">
-          		<p>Login</p>
+          		<loadContent('pages','login');
           </div>
       </div>
 <div>
