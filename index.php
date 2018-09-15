@@ -1,5 +1,10 @@
 <?php 
 require_once 'include/function.php';
+require_once 'include/classes/login_user.php';
+ require_once 'include/classes/database.php';
+$test = login_user::getidUser('pera','12121');
+// var_dump($test);
+// exit();
 ?>
 <!DOCTYPE html>
 <html>

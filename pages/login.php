@@ -28,6 +28,7 @@ $_SESSION['token'] = $token;
 	    // return;
 	     $.ajax({
 			type:"POST",
+			
 			url:"include/function.php?funkcija=userlogin",
 			data:{token:token, email_user:email_user,password_user:password_user },
                         success: function (ret)

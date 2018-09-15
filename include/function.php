@@ -36,7 +36,7 @@ function __autoload($class_name)
 	}
 	catch(Exception $e)
 	{
-		$e->getException();
+		$e->getMessage();
 	}
 
 }
@@ -46,7 +46,7 @@ function __autoload($class_name)
 	{
 		$ret = new stdClass();
         $flag = true; 
-     
+        $poruka ='';
 	    $token = $_POST['token'];
 	    $email_user = $_POST['email_user'];
 	    $password_user = $_POST['password_user'];

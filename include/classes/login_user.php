@@ -1,4 +1,5 @@
 <?php 
+
 class login_user
 {
 	protected $email_user;
@@ -19,16 +20,16 @@ class login_user
     //get id of the user
     public static function getidUser($email, $sifra)
     {
-        $konekcija= Database::getConnection();
+        $konekcija= database::getConnection();
         
 //      
         $sifra = hash_hmac('sha512', $sifra,SITE_KEY);
         $id= '';
-        $query ="SELECT id FROM data_user WHERE email='".$email."' AND sifra_korisnik='".$sifra."' AND vazi_do IS NULL AND status='A' LIMIT 1";
+        $query ="SELECT id FROM data_user WHERE email='".$email."' AND sifra_korisnika='".$sifra."' AND vazi_do IS NULL AND status='A' LIMIT 1";
         
       
         $result_query = $konekcija->query($query);
-        while($result = $result_query->fetch_array(MYSQL_ASSOC))
+        while($result = $result_query->fetch_array())
         {
             $id = $result['id'];
         }
@@ -46,7 +47,7 @@ class login_user
     //podaci se pozivaju u funkcija.php (include/function.php)
      public static function logIN($id)
     {
-        $konekcija = Database::getConnection();
+        $konekcija = database::getConnection();
         
             $query = "SELECT  id,ime, email FROM logovan_korisnik WHERE id=$id";
             $result_obj = $konekcija->query($query);

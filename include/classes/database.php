@@ -1,18 +1,19 @@
  <?php 
 
- @name	Database()
+/*
  * @author Marko Stankovic
  * @param IN
  * Konekovanje sa bazom preko propertija uzimamo podatke za bazu, uzimamo usera, sifru, naziv baze, naziv hosta
  * izbegavanje Sql inekcije
  * */
-class Database
+class database
 {
-  protected static $_mysqluser ='privilegija_korisnika';
-    private static $_mysqlPas = '1234567';
+    private static $_mysqluser='user_korisnik';
+	private static $_mysqlPas = '1234567';
 	private static $_mysqlDb = 'login_user';
 	private static $_hostName= 'localhost';
 	private static $_connection = NULL;
+	
 
 	private function __construct()
 	{
@@ -20,7 +21,8 @@ class Database
 	}
 
 //kreiraj konekciju
-	public static getConnection()
+	
+	public static function getConnection()
 	{
 		if(!self::$_connection)
 		{
@@ -32,7 +34,6 @@ class Database
 			}
 		}
 		return self::$_connection;
-		}
 	}
 
 
