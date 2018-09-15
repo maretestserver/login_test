@@ -2,6 +2,7 @@
 /*
 *@author Marko Stankov
 */
+define("SITE_KEY", "d0d48339c3b82db41^&*Slk(Ks@a1c1fd3e2792605d3cbfda1HEM54!!");
 
 //Loduj sadržaj i foldera pages/naziv stranice.php
 function loadContent($where,$content)
