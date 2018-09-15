@@ -22,12 +22,14 @@ $_SESSION['token'] = $token;
 	function login_user()
 	{
 		var token = $('#log_token').val();
-	    var user_name = $('#email_user').val();
-	    var sifra = $('#password_user').val();
+	    var email_user = $('#email_user').val();
+	    var password_user = $('#password_user').val();
+	    // alert(token);
+	    // return;
 	     $.ajax({
 			type:"POST",
-			url:"include/function.php?funkcija=logovaje_korisnika",
-			data:{token:token, user_name:user_name,sifra:sifra },
+			url:"include/function.php?funkcija=userlogin",
+			data:{token:token, email_user:email_user,password_user:password_user },
                         success: function (ret)
                         {
                             var data = JSON.parse(ret);
@@ -38,7 +40,7 @@ $_SESSION['token'] = $token;
                             else
                             {
                                 //alert(data.poruka);
-                               window.location = "index.php?pages=search"+data.poruka;
+                               window.location = "index.php?pages=search";
                             }
 
                         }

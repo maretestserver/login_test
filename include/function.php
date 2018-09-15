@@ -38,6 +38,41 @@ function __autoload($class_name)
 	{
 		$e->getException();
 	}
+
 }
+
+
+	function userlogin()
+	{
+		$ret = new stdClass();
+        $flag = true; 
+     
+	    $token = $_POST['token'];
+	    $email = $_POST['email'];
+	    $sifra = $_POST['password_user'];
+
+	    if($flag)
+    	{
+    		$flag = (empty($email)) ? false:$flag;
+    		$poruka = ($flag) ? $poruka : "Unesite vasu email adresu ime";
+       		 // if(empty($email))
+        	 // { 
+	         //   $flag = false;
+	         //   $poruka=   "Unesite vašu email adresu ime";
+          //    }
+    }
+
+	    $ret->flag = $flag;
+        $ret->poruka = $poruka;
+        echo json_encode($ret);
+        exit();
+
+}
+if(isset($_REQUEST['funkcija']) && $_REQUEST['funkcija']=='userlogin')
+{
+	login_user();
+	return;
+}
+
 
 ?>

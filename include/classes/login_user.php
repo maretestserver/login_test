@@ -64,5 +64,28 @@ class login_user
         
         return $rezultat; 
     }
+
+
+	//unisti sve sesije
+    public static function logout()
+    {
+    	unset($_SESSION['ime']);
+        unset($_SESSION['id']);
+        unset($_SESSION['email']);
+    }
+
+    //provera pristupa koristio za linkove
+
+    public static function pritup()
+    {
+    	if(isset($_SESSION['id']))
+    	{
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
+    }
 }
 ?>
