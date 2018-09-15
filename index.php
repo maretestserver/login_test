@@ -25,12 +25,12 @@ require_once 'include/function.php';
     </ul>
    <ul class="navbar-nav mr-right">
        
-   	
+
       <li class="nav-item ">
-        <a class="nav-link" href="pages=login">Login <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php?pages=login">Login <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages=register">Register</a>
+        <a class="nav-link" href="index.php?pages=register">Register</a>
       </li>
    </ul>
   </div>
@@ -40,7 +40,7 @@ require_once 'include/function.php';
           <div class="row">
         
           	<div class="col-sm-12">
-          		<?php loadContent('pages','login'); ?>
+          		<?php loadContent('pages','login') ?>
           </div>
       </div>
 <div>

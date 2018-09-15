@@ -4,16 +4,17 @@
 */
 
 //Loduj sadržaj i foldera pages/naziv stranice.php
-function loadContent($where, $content)
+function loadContent($where,$content)
 {
-	$where = filter_input(INPUT_GET, $where, FILTER_SANITIZE_STRING);
-	$content = filter_var($content, FILTER_SANITIZE_STRING);
-	$where =empty($empty) ? $content:$where;
-	if($where)
-	{
-		$html = include 'pages/'.$where.'.php';
-		return $html;
-	}
+    $where = filter_input(INPUT_GET, $where, FILTER_SANITIZE_STRING);
+    $content = filter_var($content, FILTER_SANITIZE_STRING);
+    //ako je gde prazno, onda je je stranica $Content ako nije onda je default kja stavimo
+    $where = (empty($where)? $content:$where);
+    if($where)
+    {
+        $html = include 'pages/'.$where.'.php';
+        return $html;
+    }
 }
 
 //autoload svih klasa
