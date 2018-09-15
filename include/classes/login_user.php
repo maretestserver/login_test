@@ -1,9 +1,9 @@
 <?php 
 class login_user
 {
-	protected $ime_prezime;
+	protected $email_user;
     protected $user_name;
-    protected $sifra;
+    protected $password_user;
 
     public function __construct($input = false)
     {
