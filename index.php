@@ -20,18 +20,17 @@ require_once 'include/function.php';
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/ecommerc">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/login">Home <span class="sr-only">(current)</span></a>
       </li>
     </ul>
    <ul class="navbar-nav mr-right">
+       
+   	
       <li class="nav-item ">
-        <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="pages=login">Login <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Register</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="#">Log Out</a>
+        <a class="nav-link" href="pages=register">Register</a>
       </li>
    </ul>
   </div>
