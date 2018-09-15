@@ -53,10 +53,10 @@ function __autoload($class_name)
 
 	    if($flag)
     	{
-    		$flag = (empty($email_user)) ? false:$flag;
+    		$flag = (trim($email_user)=='') ? false:$flag;
     		$poruka = ($flag) ? $poruka : "Enter your email addres "; 
     	}
-    	 if($flag)
+        if($flag)
     	{
     		$flag = (trim($password_user=='')) ? false:$flag;
     		$poruka = ($flag) ? $poruka : "Enter your password"; 
