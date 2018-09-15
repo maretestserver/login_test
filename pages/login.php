@@ -24,7 +24,7 @@ $_SESSION['token'] = $token;
 		var token = $('#log_token').val();
 	    var email_user = $('#email_user').val();
 	    var password_user = $('#password_user').val();
-	    // alert(token);
+	    // alert(password_user);
 	    // return;
 	     $.ajax({
 			type:"POST",

@@ -48,19 +48,19 @@ function __autoload($class_name)
         $flag = true; 
      
 	    $token = $_POST['token'];
-	    $email = $_POST['email'];
-	    $sifra = $_POST['password_user'];
+	    $email_user = $_POST['email_user'];
+	    $password_user = $_POST['password_user'];
 
 	    if($flag)
     	{
-    		$flag = (empty($email)) ? false:$flag;
-    		$poruka = ($flag) ? $poruka : "Unesite vasu email adresu ime";
-       		 // if(empty($email))
-        	 // { 
-	         //   $flag = false;
-	         //   $poruka=   "Unesite vašu email adresu ime";
-          //    }
-    }
+    		$flag = (empty($email_user)) ? false:$flag;
+    		$poruka = ($flag) ? $poruka : "Enter your email addres "; 
+    	}
+    	 if($flag)
+    	{
+    		$flag = (trim($password_user=='')) ? false:$flag;
+    		$poruka = ($flag) ? $poruka : "Enter your password"; 
+    	}
 
 	    $ret->flag = $flag;
         $ret->poruka = $poruka;
@@ -70,7 +70,7 @@ function __autoload($class_name)
 }
 if(isset($_REQUEST['funkcija']) && $_REQUEST['funkcija']=='userlogin')
 {
-	login_user();
+	userlogin();
 	return;
 }
 
