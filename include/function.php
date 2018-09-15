@@ -49,18 +49,18 @@ function __autoload($class_name)
      
 	    $token = $_POST['token'];
 	    $email_user = $_POST['email_user'];
-	    $password_user = trim($_POST['password_user']);
+	    $password_user = $_POST['password_user'];
 
 	    if($flag)
     	{
-    		$flag = (trim($email_user)=='') ? false:$flag;
+    		$flag = ($email_user =='') ? false: $flag;
     		$poruka = ($flag) ? $poruka : "Enter your email addres "; 
-       }
-     //    if($flag)
-    	// {
-    	// 	$flag = ($password_user=='') ? false:$flag;
-    	// 	$poruka = ($flag) ? $poruka : "Enter your password"; 
-    	// }
+    	}
+        if($flag)
+    	{
+    		$flag = ($password_user=='') ? false:$flag;
+    		$poruka = ($flag) ? $poruka : "Enter your password"; 
+    	}
 
     	 if($flag)
     	 {
@@ -91,8 +91,9 @@ function __autoload($class_name)
 
 	    $ret->flag = $flag;
         $ret->poruka = $poruka;
-        echo json_encode($ret);
-        exit();
+        $answer= json_encode($ret);
+      	echo $answer;
+        exit;
 
 }
 if(isset($_REQUEST['funkcija']) && $_REQUEST['funkcija']=='userlogin')
